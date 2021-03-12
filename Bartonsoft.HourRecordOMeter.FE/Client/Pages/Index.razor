@@ -1,0 +1,65 @@
+﻿@page "/"
+
+@using Bartonsoft.HourRecordOMeter.Shared
+@using System.Threading
+@inject HttpClient Http
+@inject IJSRuntime jsRuntime
+
+<h1>Hour Record O'Meter</h1>
+<h2>7 day forecast (evenings) of air density for Wellington Velodrome (-41.3056, 174.7896)</h2>
+<p>powered by OpenWeatherMap</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...(or free tier of OpenWeatherMap API use has been reached)</em></p>
+}
+else
+{
+    <div id="chart"></div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Air Density (kg/m3)</th>
+                <th>Temp. (K)</th>
+                <th>Air Pressure</th>
+                <th>Dew Point (K)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.DateTime.ToShortDateString()</td>
+                    <td>@forecast.AirDensity</td>
+                    <td>@forecast.Temperature</td>
+                    <td>@forecast.AirPressure</td>
+                    <td>@forecast.DewPointTemperature</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private HourRecordWeatherData[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<HourRecordWeatherData[]>("WeatherData?type=daily");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await renderChart();
+    }
+
+    private async Task renderChart()
+    {
+        var value = forecasts.Select(v => v.AirDensity);
+        var label = forecasts.Select(l => l.DateTime.ToShortDateString());
+
+        await jsRuntime.InvokeVoidAsync("generateLineChart", value, label);
+    }
+}

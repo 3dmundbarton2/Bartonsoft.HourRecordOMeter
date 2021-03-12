@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartonsoft.HourRecordOMeter.Server", "Bartonsoft.HourRecordOMeter.FE\Server\Bartonsoft.HourRecordOMeter.Server.csproj", "{F032FB01-AF21-4D8A-9512-09BD72E98945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartonsoft.HourRecordOMeter.Client", "Bartonsoft.HourRecordOMeter.FE\Client\Bartonsoft.HourRecordOMeter.Client.csproj", "{14672230-2AFE-46E5-B37A-FD42CDBB5549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartonsoft.HourRecordOMeter.Shared", "Bartonsoft.HourRecordOMeter.FE\Shared\Bartonsoft.HourRecordOMeter.Shared.csproj", "{FA23F7C7-D2E5-4426-B849-AD273312A91B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F032FB01-AF21-4D8A-9512-09BD72E98945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F032FB01-AF21-4D8A-9512-09BD72E98945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F032FB01-AF21-4D8A-9512-09BD72E98945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F032FB01-AF21-4D8A-9512-09BD72E98945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14672230-2AFE-46E5-B37A-FD42CDBB5549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14672230-2AFE-46E5-B37A-FD42CDBB5549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14672230-2AFE-46E5-B37A-FD42CDBB5549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14672230-2AFE-46E5-B37A-FD42CDBB5549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA23F7C7-D2E5-4426-B849-AD273312A91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA23F7C7-D2E5-4426-B849-AD273312A91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA23F7C7-D2E5-4426-B849-AD273312A91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA23F7C7-D2E5-4426-B849-AD273312A91B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70A1369F-747A-40DB-BE8E-BC0942361B83}
+	EndGlobalSection
+EndGlobal
