@@ -49,6 +49,10 @@ div#chart {
     height: 400px;
 }
 
+img.title {
+    width: 100%;
+}
+
 div#legend {
     float: left;
     width: 15%
@@ -59,6 +63,15 @@ li.color0 {
 }
 p._clearfloat {
     float:none;
+    overflow:auto;
+    width: 100%
+}
+p.smalltext {
+    font-size: smaller;
+}
+
+h1 {
+    font-size: large;
 }
 
 ul {
@@ -77,7 +90,7 @@ li {
     padding-right: 5%;
     color: white;
     text-align: center;
-    font-size: 1vw;
+    font-size: small;
     font-family: cursive;
 }
 

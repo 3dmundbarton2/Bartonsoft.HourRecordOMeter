@@ -58,7 +58,12 @@
                 }
             ],
         dataLabels: {
-            enabled: true            
+            enabled: true,
+            style: {
+                fontSize: '12px'
+            },
+            offsetX: 0,
+            offsetY: -10,
         },
         stroke: {
             width: 1
@@ -68,7 +73,8 @@
             align: 'left'
         },
         markers: {
-            size: 1            
+            size: 1,     
+            color: ['#000000']
         },
         xaxis: {
             categories: label,

@@ -5,55 +5,32 @@
 @inject HttpClient Http
 @inject IJSRuntime jsRuntime
 
-<h1>Hour Record O'Meter</h1>
-<p>7 day forecast (evenings) of air density for Wellington Velodrome (-41.3056, 174.7896)</p>
-<p class="poweredby">powered by OpenWeatherMap</p>
+<img class="title" src="title.png" />
+
 
 @if (forecasts == null)
 {
-    <p><em>Loading...(or free tier of OpenWeatherMap API use has been reached)</em></p>
+<p><em>Loading...(or free tier of OpenWeatherMap API use has been reached)</em></p>
 }
 else
 {
-    <div id="chart"></div>
-    <div id="legend">
-        <ul>
-            <li class="color0">Sea level 1.22 kg/m3</li>
-            <li class="color1">---</li>
-            <li class="color2">---</li>
-            <li class="color3">---</li>
-            <li class="color4">Maybe...</li>
-            <li class="color5">---</li>
-            <li class="color6">---</li>
-            <li class="color7">---</li>
-            <li class="color8">Brad Wiggins 1.176</li>
-            <li class="color9">Do it! 1.0 kg/m3</li>
-        </ul>
-    </div>
-    <p class="_clearfloat">A useful table of data</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Air Density (kg/m3)</th>
-                <th>Temp. (K)</th>
-                <th>Air Pressure</th>
-                <th>Dew Point (K)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.DateTime.ToShortDateString()</td>
-                    <td>@forecast.AirDensity</td>
-                    <td>@forecast.Temperature</td>
-                    <td>@forecast.AirPressure</td>
-                    <td>@forecast.DewPointTemperature</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div id="chart"></div>
+<div id="legend">
+    <ul>
+        <li class="color0">Sea level 1.22 kg/m3</li>
+        <li class="color1">---</li>
+        <li class="color2">---</li>
+        <li class="color3">---</li>
+        <li class="color4">Maybe...</li>
+        <li class="color5">---</li>
+        <li class="color6">---</li>
+        <li class="color7">---</li>
+        <li class="color8">Brad Wiggins 1.176</li>
+        <li class="color9">Do it! 1.0 kg/m3</li>
+    </ul>
+</div>
+<p class="_clearfloat smalltext">Showing seven day forecast (evenings) of air density for Wellington Velodrome (-41.3056, 174.7896)</p>
+<p class="smalltext"><i>(c) BartonSoft 2021</i></p>
 }
 
 @code {
