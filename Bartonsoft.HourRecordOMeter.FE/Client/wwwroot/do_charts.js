@@ -7,7 +7,7 @@
             }
         ],
         chart: {
-            height: '100%',
+            height: '400px',
             width: '100%',
             type: 'line',
             toolbar: {
@@ -17,14 +17,40 @@
         colors:
             [
                 function ({ value, seriesIndex, w }) {
-                    if (value > 1.1) {
-                        return '#FF0000'
+
+                    var upperVal = 1.2
+                    var lowerVal = 1.0
+                    var valueFraction = (value - lowerVal) / (upperVal - lowerVal)
+
+                    if (valueFraction >= 0.9) {
+                        return '#b42b2b'
                     }
-                    else if (value <= 1.1 && value > 1.0) {
-                        return '#ffa500'
+                    else if (valueFraction < 0.9 && valueFraction >= 0.8) {
+                        return '#b83f1b'
                     }
-                    else if (value <= 1.0 && value > 0.8) {
-                        return '#00FF00'
+                    else if (valueFraction < 0.8 && valueFraction >= 0.7) {
+                        return '#b95300'
+                    }
+                    else if (valueFraction < 0.7 && valueFraction >= 0.6) {
+                        return '#b56700'
+                    }
+                    else if (valueFraction < 0.6 && valueFraction >= 0.5) {
+                        return '#ae7900'
+                    }
+                    else if (valueFraction < 0.5 && valueFraction >= 0.4) {
+                        return '#a28c00'
+                    }
+                    else if (valueFraction < 0.4 && valueFraction >= 0.3) {
+                        return '#939d00'
+                    }
+                    else if (valueFraction < 0.3 && valueFraction >= 0.2) {
+                        return '#7ead00'
+                    }
+                    else if (valueFraction < 0.2 && valueFraction >= 0.1) {
+                        return '#61bd24'
+                    }
+                    else if (valueFraction <= 0.1 && valueFraction >= -0.5) {
+                        return '#28cc4b'
                     }
                     else {
                         return '#000000'
@@ -51,9 +77,6 @@
             }
         },
         yaxis: {
-            title: {
-                text: 'Air Density'
-            },
             min: 0.9,
             max: 1.29,
         }
